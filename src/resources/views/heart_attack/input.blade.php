@@ -184,7 +184,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" id="btn_submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#safeModal">Submit</button>
+                        <button type="submit" id="btn_submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#heartModal">Submit</button>
                     </form>
                     
     <script defer>
@@ -192,7 +192,7 @@
             e.preventDefault();
             
             const formData = new FormData(document.querySelector("#heartForm"))
-            var image = document.getElementById("modal_image")
+            var image = document.getElementById("heart_image")
 
             const obj = Object.fromEntries(formData)
             let adaKosong = false;
@@ -230,7 +230,7 @@
             <div class="col-2"></div>
         </div>
     </div>
-    <div class="modal fade" id="safeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="heartModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -238,7 +238,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img id="modal_image" src="{{asset('assets/image/danger.png')}}" width="130px"><br><br>
+                <img id="heart_image" src="{{asset('assets/image/danger.png')}}" width="130px"><br><br>
                 <p id="result_text"></p>
                 <p id="result_conf"></p>
             </div>

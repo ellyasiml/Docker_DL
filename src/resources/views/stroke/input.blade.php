@@ -169,14 +169,14 @@
                             <div class="input-group">
                                 <div class="input-group-text"><span class="material-symbols-outlined">smoking_rooms</span></div>
                                 <select class="form-select" name="smoking_status" id="smoking_status">
-                                    <option value=Unknown">Unknown</option>
+                                    <option value="Unknown">Unknown</option>
                                     <option value="formerly smoked">Formerly smoked</option>
                                     <option value="never smoked">Never smoked</option>
                                     <option value="smokes">Smokes</option>
                                 </select>
                             </div>
                         </div>
-                        <button id="btn_submit" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dangerModal">Submit</button>
+                        <button id="btn_submit" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#strokeModal">Submit</button>
                     </form>
                 </div>
             </div>
@@ -187,7 +187,7 @@
             e.preventDefault();
             
             document.getElementById('result_text').textContent = "Isi Semua Field"
-            var image = document.getElementById("modal_image")
+            var image = document.getElementById("stroke_image")
 
             const formData = new FormData(document.querySelector("#strokeForm"))
             const obj = Object.fromEntries(formData)
@@ -221,7 +221,7 @@
     </script>
         </div>
     </div>
-    <div class="modal fade" id="dangerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="strokeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -229,7 +229,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img id="modal_image" src="{{asset('assets/image/danger.png')}}" width="130px"><br><br>
+                <img id="stroke_image" src="{{asset('assets/image/danger.png')}}" width="130px"><br><br>
                 <p id="result_text"></p>
                 <p id="result_conf"></p>
             </div>
